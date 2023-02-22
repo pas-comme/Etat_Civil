@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_activity"
+    android:gravity="center_horizontal|center_vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:fontFamily="sans-serif-black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:text="@string/bienvenu"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_boutons"
+        android:id="@+id/insertionBTN"
+        android:layout_margin="30dp"
+        android:textSize="20sp"
+        android:padding="5sp"
+        android:text="@string/insertion"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/recherche"
+        android:background="@drawable/bg_boutons"
+        android:textColor="@color/white"
+        android:layout_margin="30dp"
+        android:textSize="20sp"
+        android:padding="5sp"
+        android:text="@string/rechercher_personne_s"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

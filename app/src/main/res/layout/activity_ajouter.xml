@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_activity"
+    android:layout_height="match_parent"
+    android:id="@+id/vfInsertion"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Ajouter">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="SpeakableTextPresentCheck,UselessParent" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titreDialoque"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/information_personne"
+                    android:textAlignment="center"
+                    android:textSize="28sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/pdp"
+                        android:layout_width="500dp"
+                        android:layout_height="500dp"
+                        app:civ_border_width="3dp"
+                        app:civ_border_color="@color/white"
+                        android:visibility="gone"
+                        tools:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/pdpBTN"
+                        android:textSize="20sp"
+                        android:padding="5sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/aPDP"
+                        android:textColor="@color/white"
+                        tools:ignore="TextContrastCheck" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/anarana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/nom"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColorHint="#7BBA7E"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/fanampiny"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/pr_nom_s"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColorHint="#7BBA7E"
+                    android:textSize="24sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/textViewSEXE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp"
+                    android:text="@string/sexe"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="34sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupSexe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/MasculinButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/masculin"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <RadioButton
+                        android:id="@+id/FéminiButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25sp"
+                        android:layout_marginRight="25sp"
+                        android:text="@string/f_minin"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <RadioButton
+                        android:id="@+id/AutresButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/autres"
+                        android:textSize="20sp"
+                        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/datyBTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:layout_weight="1"
+                        android:text="@string/modifier_date_de_naissance"
+                        android:textColor="@color/white"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/Daty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="15sp"
+                        android:layout_weight="1"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:hint="@string/_00_00_0000"
+                        android:textAlignment="center"
+                        android:textColorHint="#7BBA7E"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/adresse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/adresse"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColorHint="#7BBA7E"
+                    android:textSize="24sp"
+                    tools:ignore="TextContrastCheck" />
+                <EditText
+                    android:id="@+id/asa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/profession"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColorHint="#7BBA7E"
+                    android:textSize="24sp"
+                    tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/cin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/cin_12_chiffres_pour_les_plus_de_18_ans"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textColorHint="#7BBA7E"
+                    android:textSize="24sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/validerAjoutPers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/valider"
+                    android:textSize="20sp"
+                    android:padding="5sp"
+                    android:textColor="@color/white"
+                    tools:ignore="TextContrastCheck" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/titreQRCODE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:text="@string/texteQRCODE"/>
+        <ImageView
+            android:id="@+id/IVcode"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/todo" />
+
+        <Button
+            android:id="@+id/dowBTN"
+            android:textSize="20sp"
+            android:padding="5sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="100dp"
+            android:text="@string/download"
+            android:textColor="#FBF9F9" />
+
+        <Button
+            android:id="@+id/retourAcceuil"
+            android:textSize="20sp"
+            android:padding="5sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/retour_l_acceuil"
+            android:textColor="#FBF9F9" />
+
+    </LinearLayout>
+
+</ViewFlipper>

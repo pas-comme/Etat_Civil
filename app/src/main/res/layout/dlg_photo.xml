@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal|center_vertical"
+    android:layout_centerHorizontal="true"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/closePhoto"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_gravity="end"
+        android:contentDescription="@string/todo"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+    <TextView
+        android:id="@+id/textMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:fontFamily="sans-serif-black"
+        android:textSize="28sp"
+        android:textAlignment="center"
+        android:text="@string/choisir_photo_de_profil" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        >
+
+        <Button
+            android:id="@+id/camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/prendre_une_photo"
+            android:textColor="@color/white"
+            tools:ignore="ButtonStyle,TextContrastCheck" />
+
+        <Button
+            android:id="@+id/gallery"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/importer_depuis_gallery"
+            android:textColor="@color/white"
+            tools:ignore="ButtonStyle,TextContrastCheck" />
+    </LinearLayout>
+
+</LinearLayout>
