@@ -7,6 +7,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.net.Uri;
 import android.os.Build;
@@ -89,7 +90,7 @@ public class Ajouter extends AppCompatActivity {
             MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "qrcode", null );
         });
 
-        String url = "http://10.38.210.50:5000/API/citizens/lastID";
+        String url = "http://10.11.123.17:5000/API/citizens/lastID";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 response -> id_prs = response,
                 error -> {
@@ -205,7 +206,7 @@ public class Ajouter extends AppCompatActivity {
                 Toast.makeText(this,"CIN INVALIDE (laissez un champ vide ou saisissez 'aucun'  pour les mineurs)", Toast.LENGTH_LONG).show();
             else{
                 String image = Base64.encodeToString(img, Base64.DEFAULT);
-                String urla = "http://10.38.210.50:5000/API/citizens/newPRS";
+                String urla = "http://10.11.123.17:5000/API/citizens/newPRS";
                 String finalSexe = sexe, CIN, ASA;
 
                 if (cin.getText().toString().isEmpty())
@@ -247,10 +248,12 @@ public class Ajouter extends AppCompatActivity {
                 int temp = Integer.parseInt(id_prs) + 1;
 
                 encodeur = new QRGEncoder(String.valueOf(temp), null, QRGContents.Type.TEXT, dimen);
+
                 try {
                     bitmap = encodeur.getBitmap();
                     affichageQRCODE.setImageBitmap(bitmap);
                 } catch (Exception e) {
+                    //noinspection CallToPrintStackTrace
                     e.printStackTrace();
                 }
                 viewFlipper.showNext();

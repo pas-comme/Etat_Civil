@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/vfInsertion"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
     tools:context=".Ajouter">
 
     <LinearLayout
@@ -236,6 +237,7 @@
             android:id="@+id/IVcode"
             android:layout_width="400dp"
             android:layout_height="400dp"
+            android:background="#FFFFFF"
             android:layout_gravity="center_horizontal"
             android:contentDescription="@string/todo" />
 

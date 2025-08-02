@@ -104,7 +104,7 @@ public class Recherche extends AppCompatActivity {
         tous.setOnClickListener(view -> {
 
             prg.setVisibility(View.VISIBLE);
-            String url = "http://10.38.210.50:5000/API/citizens/persons";
+            String url = "http://10.11.123.17:5000/API/citizens/persons";
             JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
                     response -> {
 
@@ -136,7 +136,7 @@ public class Recherche extends AppCompatActivity {
                                 list.setAdapter(adapteur);
                                 String urli = null;
                                 try {
-                                    urli = "http://10.38.210.50:5000/API/citizens/delPRS?id=" + one.getInt("id");
+                                    urli = "http://10.11.123.17:5000/API/citizens/delPRS?id=" + one.getInt("id");
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -175,7 +175,7 @@ public class Recherche extends AppCompatActivity {
             Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
             vibrator.vibrate(1000);
 
-            String urlt = "http://10.38.210.50:5000/API/citizens/exists?id=" + result.getText();
+            String urlt = "http://10.11.123.17:5000/API/citizens/exists?id=" + result.getText();
             @SuppressLint("SetTextI18n") JsonObjectRequest requesti = new JsonObjectRequest(Request.Method.GET, urlt, null,
                     reponse -> {
                         String ter = "";
@@ -187,7 +187,7 @@ public class Recherche extends AppCompatActivity {
                         if (ter.equals("cet utilisateur n'existe plus"))
                             Toast.makeText(this, ter, Toast.LENGTH_LONG).show();
                         else{
-                            String url = "http://10.38.210.50:5000/API/citizens/onePRS?id=" + result.getText();
+                            String url = "http://10.11.123.17:5000/API/citizens/onePRS?id=" + result.getText();
                             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                                     response -> {
                                         traitementDialog(response, true, 0);
@@ -233,7 +233,7 @@ public class Recherche extends AppCompatActivity {
                 dialog.dismiss();
                 String url2 = null;
                 try {
-                    url2 = "http://10.38.210.50:5000/API/citizens/delPRS?id=" + prs.getInt("id");
+                    url2 = "http://10.11.123.17:5000/API/citizens/delPRS?id=" + prs.getInt("id");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -319,7 +319,7 @@ public class Recherche extends AppCompatActivity {
                 dialog.dismiss();
                 String image = Base64.encodeToString(img, Base64.DEFAULT);
 
-                String url = "http://10.38.210.50:5000/API/citizens/changePRS";
+                String url = "http://10.11.123.17:5000/API/citizens/changePRS";
                 String finalCIN; String finalASA;
                 if (cin.getText().toString().isEmpty())
                     finalCIN = "aucun";
