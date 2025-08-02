@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class JSONadapter extends ArrayAdapter<JSONObject> {
     private final Context context;
@@ -27,6 +29,7 @@ public class JSONadapter extends ArrayAdapter<JSONObject> {
         this.context = context;
         this.mResource = resource;
     }
+    @NonNull
     @SuppressLint({"ViewHolder", "SetTextI18n"})
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -44,19 +47,19 @@ public class JSONadapter extends ArrayAdapter<JSONObject> {
 
 
         try {
-            byte[] img = Base64.decode(getItem(position).getString("image"), Base64.DEFAULT);
-            ligne1.setText(getItem(position).getString("anarana") + "  " +
-                    getItem(position).getString("fanampiny"));
+            byte[] img = Base64.decode(Objects.requireNonNull(getItem(position)).getString("image"), Base64.DEFAULT);
+            ligne1.setText(Objects.requireNonNull(getItem(position)).getString("anarana") + "  " +
+                    Objects.requireNonNull(getItem(position)).getString("fanampiny"));
             pdpItem.setImageBitmap(BitmapFactory.decodeByteArray(img, 0, img.length));
-            datyTV.setText(getItem(position).getString("daty"));
-            adresseTV.setText(getItem(position).getString("adiresy"));
-            sexeTV.setText(getItem(position).getString("sexe"));
-            telTV.setText(getItem(position).getString("phone"));
-            asaTV.setText(getItem(position).getString("asa"));
-            cinTV.setText(getItem(position).getString("cin"));
+            datyTV.setText(Objects.requireNonNull(getItem(position)).getString("daty"));
+            adresseTV.setText(Objects.requireNonNull(getItem(position)).getString("adiresy"));
+            sexeTV.setText(Objects.requireNonNull(getItem(position)).getString("sexe"));
+            telTV.setText(Objects.requireNonNull(getItem(position)).getString("phone"));
+            asaTV.setText(Objects.requireNonNull(getItem(position)).getString("asa"));
+            cinTV.setText(Objects.requireNonNull(getItem(position)).getString("cin"));
 
         } catch (JSONException e) {
-            e.printStackTrace();
+           Log.e("erreur", e.toString());
         }
 
         return convertView;

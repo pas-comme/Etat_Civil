@@ -22,8 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if(!checkPermission()) {
-            Toast.makeText(this, "" +
-                    "Vous devez accepter les permissions requise pour utiliser l'application", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Vous devez accepter les permissions requise pour utiliser l'application", Toast.LENGTH_LONG).show();
             requestPermisssion();
         }
 
